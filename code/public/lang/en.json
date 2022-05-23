@@ -1,0 +1,28 @@
+{
+  "app.unauthenticated": "unauthenticated action",
+  "app.created_successfully": "%v created successfully",
+  "app.updated_successfully": "%v updated successfully",
+  "app.not_found": "%v not found",
+
+  "classrooms.module_name": "classroom",
+
+  "subjects.module_name": "subject",
+
+  "teachers.module_name": "teacher",
+
+  "timetable_sessions.module_name": "session",
+  "timetable_sessions.old_session": "this session is done",
+
+  "timetables.module_name": "timetable",
+  "timetables.teacher_sessions_overlapped": "Teacher %v have a session %v on %v that start at %v and end at %v and it overlaps with this time range (%v - %v)",
+  "timetables.classroom_sessions_overlapped": "Classroom %v have a session %v on %v that start at %v and end at %v and it overlaps with this time range (%v - %v)",
+
+  "rules.required": "this field is required",
+  "rules.date": "the date format must be like %v",
+  "rules.date_after": "this date must be after %v",
+  "rules.date_before": "this date must be before %v",
+  "rules.uuid": "this field must be uuid",
+  "rules.float_slice": "this field must be float slice",
+  "rules.i_cal_recurrence_rule": "this field format must be like (FREQ=WEEKLY;BYDAY=D1,D2,...;UNTIL=date)",
+  "rules.in": "this field must contains one of this values %v"
+}

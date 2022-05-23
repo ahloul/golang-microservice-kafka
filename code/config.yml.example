@@ -1,0 +1,12 @@
+database:
+  connection: 'mongodb://root:root@lotalty-mongo-container:27017/'
+server:
+  port: ':8080'
+  host: 'http://localhost'
+
+
+app:
+  jwtSecret: 'eLcSpGIVZ4pfF7bmafoevVoE50Ih2fg2sytdhZw2UDf3LRKMz3I5K8iTdw2guBQe'
+
+kafka:
+  url: 'loyalty-kafka:9092'

@@ -1,0 +1,28 @@
+{
+  "app.unauthenticated": "عمل غير مصرح به",
+  "app.created_successfully": "تم إنشاء %v بنجاح",
+  "app.updated_successfully": "تم تعديل ال%v بنجاح",
+  "app.not_found": "لم يتم العثور على ال%v",
+
+  "classrooms.module_name": "فصل",
+
+  "subjects.module_name": "مادة",
+
+  "teachers.module_name": "معلم",
+
+  "timetable_sessions.module_name": "حصة",
+  "timetable_sessions.old_session": "هذه الحصة إنتهت",
+
+  "timetables.module_name": "جدول",
+  "timetables.teacher_sessions_overlapped": "المعلم %v لديه حصة %v يوم %v التي تبدأ في %v و تنتهي في %v و التي تتقاطع مع هذه المدة (%v - %v)",
+  "timetables.classroom_sessions_overlapped": "فصل %v لديه حصة %v يوم %v التي تبدأ في %v و تنتهي في %v و التي تتقاطع مع هذه المدة (%v - %v)",
+
+  "rules.required": "هذا الحقل مطلوب",
+  "rules.date": "صيغة التاريخ يجب ان تكون مثل %v",
+  "rules.date_after": "هذا التاريخ يجب ان يكون بعد %v",
+  "rules.date_before": "هذا التاريخ يجب ان يكون قبل %v",
+  "rules.uuid": "هذا الحقل يجب ان يكون uuid",
+  "rules.float_slice": "هذا الحقل يجب أن يكون عبارة عن مجموعة من الأرقام",
+  "rules.i_cal_recurrence_rule": "صيغة هذا الحقل يجب ان تكون مثل (FREQ=WEEKLY;BYDAY=D1,D2,...;UNTIL=date)",
+  "rules.in": "هذا الحقل يجب ان يحتوي على إحدى هذه القيم %v"
+}

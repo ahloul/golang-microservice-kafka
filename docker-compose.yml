@@ -1,0 +1,60 @@
+version: "3.5"
+services:
+  app:
+    build: .
+    env_file: .env
+    container_name: ${APP_CONTAINER_NAME}
+    #    command: sh -c "/app/start.sh"
+    ports:
+      - '${APP_PORT}:8080'
+    volumes:
+      - ./code:/app
+    depends_on:
+      - mongo
+    networks:
+      - lotalty-service-app
+  # MongoDB
+  mongo:
+    env_file: .env
+    image: 'mongo:4.2.6-bionic'
+    command: mongod --serviceExecutor adaptive
+
+    container_name: ${MONGO_CONTAINER_NAME}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - '${MONGO_CONTAINER_PORT}:27017'
+    volumes:
+      - ./mongodata:/data/db
+      - ./mongo/init.js:/docker-entrypoint-initdb.d/mongo-init.js
+
+    restart: unless-stopped
+    networks:
+      - lotalty-service-app
+
+  # Mongo Express Web-based MongoDB admin interface
+  mongo_express:
+    env_file: .env
+    image: mongo-express
+    container_name: ${MONGO_EXPRESS_CONTAINER_NAME}
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_PASSWORD}
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: "27017"
+    depends_on:
+      - 'mongo'
+    ports:
+      - '${MONGO_EXPRESS_CONTAINER_PORT}:8081'
+    restart: unless-stopped
+    networks:
+      - lotalty-service-app
+
+
+
+
+networks:
+  lotalty-service-app:
+    name: ${LOYALTY_NETWORK_NAME}
+    external: true
