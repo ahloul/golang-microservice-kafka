@@ -19,3 +19,4 @@ files
 .docker-data
 /.docker-data
 mongodata
+code/tmp
